@@ -1,0 +1,35 @@
+{
+  "name": "nsbe-website",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@material-tailwind/react": "^1.2.3",
+    "faker": "^6.6.6",
+    "firebase": "^9.9.2",
+    "flowbite": "^1.5.2",
+    "flowbite-datepicker": "^1.2.2",
+    "flowbite-react": "^0.1.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-firebase-hooks": "^5.0.3",
+    "react-router-dom": "^6.3.0",
+    "tailwind-scrollbar-hide": "^1.1.7",
+    "tw-elements": "^1.0.0-alpha12"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.3.0",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.0.0",
+    "autoprefixer": "^10.4.8",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8",
+    "vite": "^3.0.0"
+  }
+}
