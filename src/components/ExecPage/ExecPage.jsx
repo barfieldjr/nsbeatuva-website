@@ -8,7 +8,7 @@ const ExecPage = () => {
   const [execMembers, setExecMembers] = useState([]);
 
   const getExec = async () => {
-    const docRef = doc(db, "exec", "2022-2023");
+    const docRef = doc(db, "exec", "2023-2024");
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
@@ -27,7 +27,7 @@ const ExecPage = () => {
     <div className="scroll-smooth bg-shapes scrollbar-hide">
       <div className="max-w-screen-xl flex flex-col mx-auto h-screen">
         <div className="mt-36 font-extrabold text-3xl text-white mx-4 bg-white bg-opacity-20 backdrop-blur p-3 rounded-lg flex flex-col">
-          <div className="mx-auto">2022-2023</div>
+          <div className="mx-auto">2023-2024</div>
           <div className="mx-auto">Executive Board</div>
         </div>
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
