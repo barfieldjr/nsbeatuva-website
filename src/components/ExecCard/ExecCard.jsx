@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 
-export default function ExecCard({ name, position, profilePicture, bio }) {
+export default function ExecCard({ name, position, profilePicture, bio, linkeinUrl }) {
   return (
     <div className="hover:cursor-pointer xl:hover:scale-105 duration-500 w-full bg-white bg-opacity-20 backdrop-blur-lg rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row">
       <div className="w-full md:w-2/5 h-full">
@@ -38,7 +38,7 @@ export default function ExecCard({ name, position, profilePicture, bio }) {
           )}
         </p>
         <div className="flex justify-start space-x-2">
-          <a href="#" className="text-white hover:text-gray-600">
+          <a href={linkedinUrl ? linkedinUrl : "#"} className="text-white hover:text-gray-600">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-6 h-6"

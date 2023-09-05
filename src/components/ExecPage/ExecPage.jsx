@@ -38,6 +38,7 @@ const ExecPage = () => {
                 position={member.position}
                 profilePicture={member.profilePicture}
                 bio={member.bio}
+                linkedinUrl={member.linkedinUrl}
               />
             ))}
           </div>
