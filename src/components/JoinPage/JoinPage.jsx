@@ -1,5 +1,5 @@
 import React from "react";
-import venmo from "./venmo_logo_white.png";
+import venmo from "./Venmo_Logo_White.png";
 
 const JoinPage = () => {
   const openInNewTab = (url) => {
