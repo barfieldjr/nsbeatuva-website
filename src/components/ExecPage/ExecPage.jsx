@@ -1,11 +1,27 @@
 import React, { useState, useEffect } from "react";
 import ExecCard from "./../ExecCard/ExecCard";
-import { faker } from "@faker-js/faker";
-import { doc, getDoc, collection, getDocs } from "firebase/firestore";
-import { db, auth } from "../Firebase/Firebase";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../Firebase/Firebase";
 
 const ExecPage = () => {
   const [execMembers, setExecMembers] = useState([]);
+
+  const positionOrder = [
+    "President",
+    "Vice President",
+    "Treasurer",
+    "Secretary",
+    "Programs Chair",
+    "Corporate Liaison Chair",
+    "Corporate Liason",
+    "Graduate Student Liaison",
+    "Parliamentarian",
+    "Publications Chair",
+    "Academic Excellence Chair",
+    "Telecommunications Chair",
+    "Conference Planning Chair",
+    "Pre-College Initiative Chair",
+  ];
 
   const getExec = async () => {
     const docRef = doc(db, "exec", "2023-2024");
@@ -14,7 +30,6 @@ const ExecPage = () => {
     if (docSnap.exists()) {
       setExecMembers(docSnap.data().members);
     } else {
-      // doc.data() will be undefined in this case
       console.log("No such document!");
     }
   };
@@ -22,6 +37,26 @@ const ExecPage = () => {
   useEffect(() => {
     getExec();
   }, []);
+
+  useEffect(() => {
+    getExec();
+  }, []);
+
+  const sortedExecMembers = [...execMembers].sort((a, b) => {
+    const positionA = a.position;
+    const positionB = b.position;
+
+    const indexA = positionOrder.indexOf(positionA);
+    const indexB = positionOrder.indexOf(positionB);
+
+    // If positionA is not in the list, push it down
+    if (indexA === -1) return 1;
+
+    // If positionB is not in the list, push it down
+    if (indexB === -1) return -1;
+
+    return indexA - indexB;
+  });
 
   return (
     <div className="scroll-smooth bg-shapes scrollbar-hide">
@@ -32,7 +67,7 @@ const ExecPage = () => {
         </div>
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {execMembers.map((member) => (
+            {sortedExecMembers.map((member) => (
               <ExecCard
                 name={member.name}
                 position={member.position}
