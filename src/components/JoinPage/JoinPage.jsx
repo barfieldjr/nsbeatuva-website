@@ -1,5 +1,6 @@
 import React from "react";
 import venmo from "./Venmo_Logo_White.png";
+import cashapp from "./cash-app.png";
 
 const JoinPage = () => {
   const openInNewTab = (url) => {
@@ -23,14 +24,15 @@ const JoinPage = () => {
           <div className="mx-auto">Pay Chapter Dues</div>
           <hr></hr>
           <div className="mx-auto  flex flex-col">
-            <img src={venmo} className="scale-50 mb-2"></img>
+            <img src={cashapp} className="scale-50 mb-2"></img>
             <div className="flex flex-row mx-auto space-x-2">
               <div className="my-auto p-2 border rounded-md bg-black bg-opacity-40">
                 $15
               </div>
               <button
                 onClick={() =>
-                  openInNewTab("https://account.venmo.com/u/nsbeatuva")
+                  // openInNewTab("https://account.venmo.com/u/nsbeatuva")
+                  openInNewTab("https://cash.app/$nsbeuva")
                 }
                 className="mx-auto border font-md rounded-md p-2 bg-blue-700 hover:cursor-pointer hover:scale-105 duration-500"
               >
